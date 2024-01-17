@@ -33,7 +33,7 @@ def perform_search():
     if query:
         search_url = "https://api.themoviedb.org/3/search/movie"
         base_image_url = "https://image.tmdb.org/t/p/w500"
-        api_key = '0f264d0b7f5b161c9362feae66e5a923'  # Replace with your actual API key
+        api_key = '0f264d0b7f5b161c9362feae66e5a923'  
         headers = {'Authorization': 'Bearer ' + api_key}
         params = {'query': query, 'api_key': api_key}
         
@@ -73,9 +73,8 @@ def perform_search():
                     image_label.image = image
                     image_label.pack(side=LEFT)
         else:
-            # Handle the case when no results are found
+            
             output.config(text="Movie not found")
-            # Clear the previous image if no results are found
             for widget in image_frame.winfo_children():
                 widget.destroy()
 
